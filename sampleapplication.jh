@@ -1,0 +1,12 @@
+ enum DossierStatut {	
+	RECU, COMPLET
+  }	
+entity Dossier{
+	recoursDate LocalDate,
+	numero	String,
+	statut	DossierStatut,
+	numerise	Boolean,
+    avocat String,
+    secretaire String,
+    assesseur String
+}
