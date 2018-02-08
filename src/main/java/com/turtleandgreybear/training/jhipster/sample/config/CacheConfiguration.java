@@ -42,6 +42,8 @@ public class CacheConfiguration {
             cm.createCache(com.turtleandgreybear.training.jhipster.sample.domain.User.class.getName(), jcacheConfiguration);
             cm.createCache(com.turtleandgreybear.training.jhipster.sample.domain.Authority.class.getName(), jcacheConfiguration);
             cm.createCache(com.turtleandgreybear.training.jhipster.sample.domain.User.class.getName() + ".authorities", jcacheConfiguration);
+            cm.createCache(com.turtleandgreybear.training.jhipster.sample.domain.Dossier.class.getName(), jcacheConfiguration);
+            cm.createCache(com.turtleandgreybear.training.jhipster.sample.domain.Avocat.class.getName(), jcacheConfiguration);
             // jhipster-needle-ehcache-add-entry
         };
     }

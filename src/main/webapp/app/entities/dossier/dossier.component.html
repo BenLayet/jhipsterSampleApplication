@@ -1,0 +1,70 @@
+<div>
+    <h2>
+        <span>Dossiers</span>
+        <button class="btn btn-primary float-right jh-create-entity create-dossier" [routerLink]="['/', { outlets: { popup: ['dossier-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span >
+            Create new Dossier
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="dossiers">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span>ID</span></th>
+            <th><span>Recours Date</span></th>
+            <th><span>Numero</span></th>
+            <th><span>Statut</span></th>
+            <th><span>Numerise</span></th>
+            <th><span>Avocat</span></th>
+            <th><span>Secretaire</span></th>
+            <th><span>Assesseur</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let dossier of dossiers ;trackBy: trackId">
+                <td><a [routerLink]="['../dossier', dossier.id ]">{{dossier.id}}</a></td>
+                <td>{{dossier.recoursDate | date:'mediumDate'}}</td>
+                <td>{{dossier.numero}}</td>
+                <td>{{dossier.statut}}</td>
+                <td>{{dossier.numerise}}</td>
+                <td>{{dossier.avocat}}</td>
+                <td>{{dossier.secretaire}}</td>
+                <td>{{dossier.assesseur}}</td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../dossier', dossier.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="d-none d-md-inline">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'dossier/'+ dossier.id + '/edit'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="d-none d-md-inline">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'dossier/'+ dossier.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="d-none d-md-inline">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,9 +1,13 @@
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
+import { JhipsterSampleApplicationDossierModule } from './dossier/dossier.module';
+import { JhipsterSampleApplicationAvocatModule } from './avocat/avocat.module';
 /* jhipster-needle-add-entity-module-import - JHipster will add entity modules imports here */
 
 @NgModule({
     imports: [
+        JhipsterSampleApplicationDossierModule,
+        JhipsterSampleApplicationAvocatModule,
         /* jhipster-needle-add-entity-module - JHipster will add entity modules here */
     ],
     declarations: [],
