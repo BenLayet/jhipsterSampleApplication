@@ -1,0 +1,41 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "recoursDate",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "numero",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "statut",
+            "fieldType": "DossierStatut",
+            "fieldValues": "RECU,COMPLET"
+        },
+        {
+            "fieldName": "numerise",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "avocat",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "secretaire",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "assesseur",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20180208144411",
+    "entityTableName": "dossier",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false
+}

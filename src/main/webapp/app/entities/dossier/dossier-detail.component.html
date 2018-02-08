@@ -1,0 +1,50 @@
+
+<div *ngIf="dossier">
+    <h2><span>Dossier</span> {{dossier.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span>Recours Date</span></dt>
+        <dd>
+            <span>{{dossier.recoursDate | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span>Numero</span></dt>
+        <dd>
+            <span>{{dossier.numero}}</span>
+        </dd>
+        <dt><span>Statut</span></dt>
+        <dd>
+            <span>{{dossier.statut}}</span>
+        </dd>
+        <dt><span>Numerise</span></dt>
+        <dd>
+            <span>{{dossier.numerise}}</span>
+        </dd>
+        <dt><span>Avocat</span></dt>
+        <dd>
+            <span>{{dossier.avocat}}</span>
+        </dd>
+        <dt><span>Secretaire</span></dt>
+        <dd>
+            <span>{{dossier.secretaire}}</span>
+        </dd>
+        <dt><span>Assesseur</span></dt>
+        <dd>
+            <span>{{dossier.assesseur}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'dossier/'+ dossier.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span> Edit</span>
+    </button>
+</div>
